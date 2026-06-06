@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explain This - Ghana Study Explainer</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="workspace" aria-labelledby="app-title">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Sprint 1 prototype</p>
+            <h1 id="app-title">Explain This</h1>
+          </div>
+          <div class="status" aria-label="Prototype status">
+            <span class="dot"></span>
+            Web preview
+          </div>
+        </header>
+
+        <section class="intro" aria-label="Product promise">
+          <p>
+            Paste a school topic, textbook paragraph, or revision question. Get a simple explanation,
+            a Ghanaian example, optional Twi support, and quick checks for understanding.
+          </p>
+        </section>
+
+        <section class="controls" aria-label="Assistant controls">
+          <div class="field">
+            <label for="provider">AI Provider</label>
+            <select id="provider">
+              <option value="template">Template fallback</option>
+              <option value="gemini">Gemini free tier</option>
+              <option value="openrouter">OpenRouter free model</option>
+              <option value="ollama">Ollama local</option>
+              <option value="openai">OpenAI API</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="mode">Mode</label>
+            <select id="mode">
+              <option value="explain">Explain simply</option>
+              <option value="translate">Translate key ideas</option>
+              <option value="summarize">Summarize notes</option>
+              <option value="quiz">Quiz me</option>
+              <option value="check">Check understanding</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="language">Language</label>
+            <select id="language">
+              <option value="english">Simple Ghanaian English</option>
+              <option value="twi">English + Asante Twi support</option>
+              <option value="ewe" disabled>Ewe test lane coming later</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="level">Level</label>
+            <select id="level">
+              <option value="jhs">JHS / BECE revision</option>
+              <option value="upper-primary">Upper primary</option>
+              <option value="teacher">Teacher prep</option>
+              <option value="parent">Parent helper</option>
+            </select>
+          </div>
+        </section>
+
+        <section class="composer" aria-label="Prompt input">
+          <label for="prompt">School topic, note, or question</label>
+          <textarea
+            id="prompt"
+            rows="8"
+            placeholder="Example: Explain evaporation and condensation with examples from everyday life in Ghana."
+          ></textarea>
+          <div class="actions">
+            <button id="sampleButton" type="button" class="secondary">Use sample</button>
+            <button id="runButton" type="button">Explain</button>
+          </div>
+        </section>
+
+        <section class="output" aria-live="polite" aria-label="Assistant output">
+          <div class="output-header">
+            <h2>Assistant response</h2>
+            <span id="confidence">Ready</span>
+          </div>
+          <div id="response" class="response empty">
+            Choose a mode, enter a school topic, and run the prototype.
+          </div>
+        </section>
+      </section>
+
+      <aside class="sidepanel" aria-label="Evaluation panel">
+        <section>
+          <h2>Review checklist</h2>
+          <ul>
+            <li>Is the answer simple enough?</li>
+            <li>Is the school content correct?</li>
+            <li>Does the example feel Ghanaian?</li>
+            <li>Is the Twi understandable?</li>
+            <li>Did it avoid overclaiming?</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Source scope</h2>
+          <p>
+            Sprint 1 stays inside school explanation, revision, and language support. It avoids
+            medical, financial, legal, live-news, and leaked-exam requests.
+          </p>
+        </section>
+
+        <section>
+          <h2>Free testing</h2>
+          <p>
+            Gemini, OpenRouter, and Ollama need local setup in `.env`. Template mode works without
+            any key. Avoid sensitive student data on free tiers.
+          </p>
+        </section>
+
+        <section class="feedback">
+          <h2>Tester signal</h2>
+          <div class="feedback-grid">
+            <button type="button" data-feedback="helpful">Helpful</button>
+            <button type="button" data-feedback="confusing">Confusing</button>
+            <button type="button" data-feedback="unsafe">Unsafe</button>
+            <button type="button" data-feedback="reuse">Would reuse</button>
+          </div>
+          <p id="feedbackNote">Feedback is logged in this preview session only.</p>
+        </section>
+      </aside>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

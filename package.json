@@ -1,0 +1,13 @@
+{
+  "name": "ghana-ai-study-explainer",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A Ghana-focused local-language study explainer prototype for JHS/upper-primary learning support.",
+  "scripts": {
+    "start": "node prototype/server.js",
+    "dev": "node prototype/server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
