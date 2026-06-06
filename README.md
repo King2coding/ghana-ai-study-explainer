@@ -40,7 +40,7 @@ For Gemini free-tier testing:
 ```bash
 AI_PROVIDER=gemini
 GEMINI_API_KEY=your_key_here
-GEMINI_MODEL=gemini-3.1-flash-lite
+GEMINI_MODEL=gemini-2.5-flash-lite
 ```
 
 For OpenRouter free-model testing:
@@ -74,4 +74,3 @@ OPENAI_MODEL=gpt-5.4-mini
 4. Deploy a private web pilot.
 5. Test with 10-20 students, teachers, parents, and reviewers.
 6. Update cost-benefit and investor documentation with real usage data.
-
